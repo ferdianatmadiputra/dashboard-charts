@@ -61,7 +61,6 @@ export default function RevenueChart ({ data }) {
   }, [data])
 
   useEffect(() => {
-    console.log(data)
   }, [data])
 
   const formatData = () => {
@@ -176,7 +175,7 @@ export default function RevenueChart ({ data }) {
   if (data.length === 0) {
     return <p>No Data</p>
   }
-  
+
   return (
     <div>
       <div className={classes.cardHeader}>

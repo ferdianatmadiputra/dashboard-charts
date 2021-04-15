@@ -10,7 +10,6 @@ export default function ConversionChart ({ data }) {
   }, [data])
 
   useEffect(() => {
-    console.log(data)
   }, [data])
 
   const formatData = () => {

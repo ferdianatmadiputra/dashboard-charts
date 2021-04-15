@@ -114,13 +114,12 @@ export default function OrdersTable ({ data }) {
   const classes = useStyles()
 
   useEffect(() => {
-    console.log(data)
   }, [data])
 
   const formatId = (id) => {
     return id.split("-")[2];
   }
-  
+
   if (data.length === 0) {
     return <p>No Data</p>
   }
