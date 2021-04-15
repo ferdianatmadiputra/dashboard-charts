@@ -1,20 +1,14 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 import logo from '../assets/logo.svg'
 import Avatar from '@material-ui/core/Avatar'
-import Badge from '@material-ui/core/Badge'
 import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'sticky',
     flexGrow: 1,
     backgroundColor: '#ffffff',
     boxShadow: 'none',
@@ -71,8 +65,6 @@ const useStyles = makeStyles((theme) => ({
   searchIcon: {
     padding: theme.spacing(0, 2),
     height: '100%',
-    // width: '100%',
-    // display: 'inline',
     position: 'absolute',
     right: '-0.5ch',
     pointerEvents: 'none',
@@ -93,9 +85,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Montserrat',
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: '1em',
-    // vertical padding + font size from searchIcon
     paddingRight: `calc(1em + 2em)`,
-    // transition: theme.transitions.create('width'),
     width: '12ch',
     color: '#000000',
 
@@ -153,6 +143,7 @@ const useStyles = makeStyles((theme) => ({
   address: {
     fontSize: 10,
     letterSpacing: '0.4px',
+    color: '#9C9C9C'
   },
   nameContainer: {
     paddingLeft: 20,
@@ -178,7 +169,7 @@ export default function TopMenu() {
 
   return (
     <div>
-      <AppBar position="static" className={classes.root}>
+      <AppBar position="fixed" className={classes.root}>
         <Toolbar className={classes.toolbar}>
         <Grid container spacing={0}>
           <Grid item xs={12} sm={6} className={classes.navLeft} >
@@ -216,7 +207,6 @@ export default function TopMenu() {
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
-                // inputProps={{ 'aria-label': 'search' }}
               />
             </div>
             <div className={classes.icon}>
@@ -234,10 +224,10 @@ export default function TopMenu() {
           </Grid>
           </Grid>
         </Toolbar>
-      </AppBar>
       <div className={classes.subMenu}>
         <span>8 April 2021</span>
       </div>
+      </AppBar>
     </div>
   );
 }
