@@ -68,6 +68,11 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade('#789764', 0.8),
     }
+  },
+  marginAuto: {
+    display:'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
   }
 }))
 
@@ -102,7 +107,7 @@ export default function Datepicker({filterData, resetData}) {
   }
 
   return (
-    <div>
+    <div className={classes.marginAuto}>
       <DatePicker
         renderCustomHeader={({
           date,

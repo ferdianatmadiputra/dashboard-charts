@@ -167,8 +167,17 @@ const useStyles = makeStyles((theme) => ({
 export default function TopMenu() {
   const classes = useStyles();
 
+  const getDate = () => {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    let today = new Date()
+    const year = today.getFullYear();
+    const month = months[today.getMonth()];
+    const date = today.getDate();
+
+    return `${date} ${month} ${year}`
+  }
   return (
-    <div>
+    <>
       <AppBar position="fixed" className={classes.root}>
         <Toolbar className={classes.toolbar}>
         <Grid container spacing={0}>
@@ -225,9 +234,9 @@ export default function TopMenu() {
           </Grid>
         </Toolbar>
       <div className={classes.subMenu}>
-        <span>8 April 2021</span>
+        <span>{getDate()}</span>
       </div>
       </AppBar>
-    </div>
+    </>
   );
 }
